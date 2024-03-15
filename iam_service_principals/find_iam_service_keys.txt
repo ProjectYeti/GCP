@@ -1,0 +1,1 @@
+while read account; do gcloud iam service-accounts keys list --iam-account=$account --managed-by=user; done < o.txt

@@ -1,0 +1,2 @@
+functions=$(gcloud functions list --format json); 
+echo "$functions" | jq '.[] | select(.secretEnvironmentVariables) | {"name": .name, "secrets": .secretEnvironmentVariables}' -r
